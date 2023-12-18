@@ -34,19 +34,27 @@ const object2 = { number: 0 }
 const object3 = { number: -7 }
 // Expected output: "-7 is not divisible by three"
 
-// b) Create the function that makes the test pass.
+// b) Create the function that makes the test pass.obj ={`number`: 10}
+result = is _evenly_divisible(obj1)
+print(f'
+ Test Case 1: {result1}, Expected: True'0')
 
-// Pseudo code:
+// Pseudo code:function takes an object as an argument it checks if the object has a number attribute and if so it checks if the number is easily diviseble by 2
+
 
 // --------------------2) Create a function that takes in an array of words and returns an array with all the words capitalized.
-
+capitalzed_array = [word.capitalize( for word in word_array]
+    return capitalized_array)]
 // a) Create a test with expect statements for each of the variables provided.
-
+expect(randomNouns1) . to.be.an('array');
+expect(variables) . to . have . lengthof(5);
+expect(randomNouns2) . to.have.lengthof(4) ; 
+expect( randomNouns2).to.have.lengthof(4)
 const randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"]
 // Expected output: ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"]
 const randomNouns2 = ["temperature", "database", "chopsticks", "mango"]
 // Expected output: ["Temperature", "Database", "Chopsticks", "Mango"]
 
-// b) Create the function that makes the test pass.
+// b) Create the function that makes the test pass.const randomNouns =['apple', 'car' , 'house' 'cat', 'book']: return randomNouns;
 
-// Pseudo code:
+// Pseudo code:function created the returns an array
