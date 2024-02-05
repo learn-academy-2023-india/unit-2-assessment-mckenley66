@@ -20,13 +20,7 @@ const numbersArray2 = [24, 27, 30, 33, 36]
 // Expected output: [72, 81, 90, 99, 108]
 
 
-// multiplyByThree.test.js
-
-
-  
-
-
-// b) Create the function that makes the test pass.
+  // b) Create the function that makes the test pass.
 
 // Pseudo code:
 // input array
@@ -42,87 +36,75 @@ const numbersArray2 = [24, 27, 30, 33, 36]
 // --------------------1) Create a function that takes a object as an argument and decides if the number inside it is evenly divisible by three or not.
 
 // a) Create a test with expect statements for each of the variables provided.
-// yourFileName.js
 
-// yourFileName.test.js
+//create a function that checks if a number is divisble by three or not.
+const isDivisibleByThree = (number) => {
+  return number % 3 === 0;
+}
 
-function isDivisibleByThree(number) {
-    // Check if the number is divisible by three
-    return number % 3 === 0;
-  }
-  
-// variables [15,0,-7]
+// Test cases
+  describe("isDivisibleByThree", () => {
+  it("should return true for a number divisible by three", () => {
+    const number1 = 15;
+    // Expect: 15 to be true
+    expect(isDivisibleByThree(number1)).toEqual(true);
+  });
 
+  it("should return false for 0", () => {
+    const number2 = 0;
+    // Expect: 0 to be false
+    expect(isDivisibleByThree(number2)).toEqual(false);
+  });
 
-// Jest test cases
-
-const { isDivisibleByThree } = require('./divisibleByThree.test.js');
-
-test('object1: { number: 15 } is divisible by three', () => {
-  expect(isDivisibleByThree({ number: 15 })).toBe(true);
+  it("should return false for a number not divisible by three", () => {
+    const number3 = -7;
+    // Expect: -7 to be false
+    expect(isDivisibleByThree(number3)).toEqual(false);
+  });
 });
 
-test('object2: { number: 0 } is divisible by three', () => {
-  expect(isDivisibleByThree({ number: 0 })).toBe(true);
-});
-
-test('object3: { number: -7 } is not divisible by three', () => {
-  expect(isDivisibleByThree({ number: -7 })).toBe(false);
-});
+//psuedo code 
+//create a function that divides each number by three
+//return values true if number is divisible by three else false if number is not divisible by three
 
 
-
-  
 
 
 
 
 // --------------------2) Create a function that takes in an array of words and returns an array with all the words capitalized.
-//capitalzed_array = [word.capitalize( for word in word_array]
-  //  return capitalized_array)]
-  // a) Create a test with expect statements for each of the variables provided.
+const randomNouns = (wordArray) => {
+  return wordArray.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+};
+ 
+// a) Create a test with expect statements for each of the variables provided.
 //expect(randomNouns1) . to.be.an('array');
 //expect(variables) . to . have . lengthof(5);
 //expect(randomNouns2) . to.have.lengthof(4) ; 
 //expect( randomNouns2).to.have.lengthof(4)
-//const randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"]
-// Expected output: ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"]
-//const randomNouns2 = ["temperature", "database", "chopsticks", "mango"]
-// Expected output: ["Temperature", "Database", "Chopsticks", "Mango"]
 
-  const randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"];
+// jest test case
+describe ("randomNouns", () => {
+  it ("it takes in an array of words and returns a new array with the first letter of each word capitalized and returns the length of the array", () => {
+    const randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"];
+ //expected output: ["Streetlamp", "Potato", "Teeth", "Conclusion", "Nephew"]
+ expect(randomNouns(randomNouns1)).toEqual(["Streetlamp","Potato", "Teeth","Conclusion","Nephew"]);
 
-  const capitalizedWords = randomNouns1.map(word => word.charAt(0).toUpperCase() + word.slice(1));
-  
-  console.log(capitalizedWords);
+ const randomNouns2 = ["temperature", "database", "chopsticks", "mango"];
+//expected output: ["Temperature", "Database", "Chopsticks", "Mango"]
+expect(randomNouns2(randomNouns2)).toEqual(["Temperature","Database","Chopsticks","Mango"]);
+  });
 
-
-
-  const randomNouns1 = {["streelamp", "potato", "teeth", "conclusion", "nephew"]}
-// Expected output: " true "
-// Expected output: " 5"
-
-const randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"]
-console.log(Array.isArray(randomNouns1));
-console.log(randomNouns1.length);
-
-
-const randomNouns2 = ["temperature", "database", "chopsticks", "mango"];
-
-const capitalizedWords = randomNouns2.map(word => word.charAt(0).toUpperCase() + word.slice(1));
-  
-console.log(capitalizedWords);
-
-const randomNouns2 = ["temperature", "database", "chopsticks", "mango"];
-// Expected output: " true "
-// Expected output: "4"
-
-const randomNouns2 = ["temperature", "database", "chopsticks", "mango"];
-console.log(Array.isArray(randomNouns2));
-console.log(randomNouns2.length);
-
-
-
-
-
-
+  it("should return the length of array", () => {
+    const randomNouns1 = ["streetlamp", "potato", "teeth", "conclusion", "nephew"];
+    //expected output: 5
+    expect(randomNouns(randomNouns1).length).toEqual(5);
+ 
+    const randomNouns2 = ["temperature", "database", "chopsticks", "mango"];
+    //expected output: 4
+    expect(randomNouns(randomNouns2).length).toEqual(4);
+ });
+});
+//pusedo code
+//write a function that takes in an array and returns a new array with each word capitalized
+//check the length of the array
